@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "720976725963",
+    "project_id": "easytrials-69979",
+    "storage_bucket": "easytrials-69979.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:720976725963:android:3176cfc5c2cbd49696d84e",
+        "android_client_info": {
+          "package_name": "com.anuraagpotdaar.easytrials"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "720976725963-kpi4cqaam89po6oogkb2hqriud3jrv4j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBW1HLtbDBSvr7e0v_Iri_f7G9yXLJlg9U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "720976725963-kpi4cqaam89po6oogkb2hqriud3jrv4j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
