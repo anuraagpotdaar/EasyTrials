@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/SoftBackground"
+    tools:context=".ParticipantDetailsFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/btnBackPartiDetails"
+        style="@style/SecNavBtn"
+        android:text="Back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/ivPartiPhoto"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tvPartiName"
+        style="@style/Heading"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/Purple"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivPartiPhoto"
+        tools:text="John Doe" />
+
+    <TextView
+        android:id="@+id/tvPartiQuickInfo"
+        style="@style/CallOut"
+        android:layout_width="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPartiName"
+        tools:text="22 years old Male" />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        style="@style/Subheading"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="25dp"
+        android:text="Status: All okay"
+        android:textColor="@color/Black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPartiQuickInfo" />
+
+    <TextView
+        android:id="@+id/tvPartiDetailsInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Current Heart Rate:\nCurrent Oxygen levels:\nCurrent Blood Pressure:"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvStatus" />
+
+    <TextView
+        android:id="@+id/tvPartiHealthData2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="30dp"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="right"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvPartiDetailsInfo"
+        app:layout_constraintTop_toBottomOf="@+id/tvStatus"
+        tools:text="96BPM\n96%\n100mm Hg" />
+
+    <TextView
+        android:id="@+id/btnDetailedHelthInfo"
+        style="@style/SecondaryButton"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:text="See detailed health information"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPartiDetailsInfo" />
+
+    <TextView
+        android:id="@+id/tvPartiDetailsInfo2"
+        style="@style/Subheading"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:text="Personal details:"
+        android:textColor="@color/Black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnDetailedHelthInfo" />
+
+    <TextView
+        android:id="@+id/tvPartiDetailsInfo3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Phone Number:\nEmail:\nAddress:"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPartiDetailsInfo2" />
+
+    <TextView
+        android:id="@+id/tvPartiDetails"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="30dp"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="right"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvPartiDetailsInfo3"
+        app:layout_constraintTop_toBottomOf="@+id/tvPartiDetailsInfo2"
+        tools:text="77xxxxxxxx\njohn@doe.com\n16 Park Avenue, Pune" />
+
+    <TextView
+        android:id="@+id/tvPartiDetailsNextVisit"
+        style="@style/Subheading"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:text="Next visit: In 4 days."
+        android:textColor="@color/Black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPartiDetails" />
+
+    <TextView
+        android:id="@+id/btnMedHistory"
+        style="@style/SecondaryButton"
+        android:layout_marginTop="15dp"
+        android:text="View medical history"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPartiDetailsNextVisit" />
+
+    <TextView
+        android:id="@+id/btnMeds"
+        style="@style/SecondaryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="View medicines"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMedHistory" />
+
+    <EditText
+        android:id="@+id/etPushMsg"
+        style="@style/MyEditText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="top"
+        android:hint="Hey how do you feeling now...\nIs their any pain?"
+        android:inputType="textMultiLine"
+        android:maxLength="250"
+        app:layout_constraintBottom_toTopOf="@+id/btnCall"
+        app:layout_constraintEnd_toStartOf="@+id/btnSendPushMsg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMeds" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSendPushMsg"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:text="Send"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="@+id/etPushMsg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/etPushMsg" />
+
+    <Button
+        android:id="@+id/btnCall"
+        style="@style/PrimaryActionButton"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="16dp"
+        android:text="Call"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
