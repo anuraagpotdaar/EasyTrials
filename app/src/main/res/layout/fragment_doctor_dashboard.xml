@@ -38,9 +38,9 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="60dp"
         android:textColor="@color/Purple"
-        tools:text="John Doe"
         app:layout_constraintStart_toEndOf="@+id/tvGreet"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="John Doe" />
 
     <TextView
         android:id="@+id/tvParticipantCount"
@@ -68,12 +68,12 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="30dp"
+        app:checkedButton="@id/btnPriority"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etParticipantSearch"
-        app:singleSelection="true"
         app:selectionRequired="true"
-        app:checkedButton="@id/btnPriority">
+        app:singleSelection="true">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnPriority"
@@ -81,25 +81,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Priority"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAll"
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAllCaps="false"
-            android:text="All" />
+            android:text="All"
+            android:textAllCaps="false" />
     </com.google.android.material.button.MaterialButtonToggleGroup>
-
-    <TextView
-        android:id="@+id/btnAddParti"
-        style="@style/SecondaryButton"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="15dp"
-        android:text="Add new participant"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toggleButton" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvParticipantList"
@@ -112,6 +103,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAddParti" />
+        app:layout_constraintTop_toBottomOf="@+id/toggleButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

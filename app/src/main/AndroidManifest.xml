@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EasyTrials">
         <activity
-            android:name=".doctors.DoctorDashboard"
+            android:name=".doctors.DoctorHome"
             android:exported="false" />
         <activity
             android:name=".participants.ParticipantHome"
