@@ -43,7 +43,7 @@ public class ParticipantDetailsFragment extends Fragment {
 
         String selected = getActivity().getIntent().getStringExtra("selected participant");
 
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Patient List/"+selected);
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Participants/"+selected);
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -119,7 +119,7 @@ public class ParticipantDetailsFragment extends Fragment {
         });
 
         binding.btnBackPartiDetails.setOnClickListener(view13 -> {
-            // TODO: 09/03/2022
+            // TODO: 20/03/2022
         });
 
         return view;

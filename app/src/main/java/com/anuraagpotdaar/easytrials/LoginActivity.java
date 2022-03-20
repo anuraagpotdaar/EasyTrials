@@ -47,8 +47,6 @@ public class LoginActivity extends AppCompatActivity {
                         if (snapshot.exists()) {
                             binding.etUsername.setError(null);
                             String passwordFromDB = snapshot.child(userEnterdUsername).child("password").getValue(String.class).trim();
-                            Toast.makeText(LoginActivity.this, passwordFromDB, Toast.LENGTH_SHORT).show();
-                            Log.e("user", passwordFromDB);
 
                             if (passwordFromDB.equals(userEnteredPassword)) {
                                 binding.etPassword.setError(null);
@@ -73,7 +71,7 @@ public class LoginActivity extends AppCompatActivity {
                 });
             } else if (userEnterdUsername.length() > 3) {
 
-                DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
+                DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Participants");
                 Query checkUser = reference.orderByChild("username").equalTo(userEnterdUsername);
 
                 checkUser.addListenerForSingleValueEvent(new ValueEventListener() {

@@ -41,7 +41,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvHealthDataUserName"
-        tools:src="@drawable/ic_oxygen" />
+        tools:src="@drawable/ic_heart" />
 
     <TextView
         android:id="@+id/tvCurrent"

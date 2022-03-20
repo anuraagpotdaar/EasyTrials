@@ -43,10 +43,7 @@ public class HealthDataFragment extends Fragment {
         binding = FragmentHealthDataBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
 
-        String selected = getActivity().getIntent().getStringExtra("selected participant");
-
-        binding.tvHealthDataUserName.setText(getActivity().getIntent().getStringExtra("participant name"));
-
+        String selected = getActivity().getIntent().getStringExtra("id");
 
         recyclerView = binding.rvReadingList;
         recyclerView.setHasFixedSize(true);
@@ -79,19 +76,19 @@ public class HealthDataFragment extends Fragment {
 
     private void displayData(String selected, String selectedHealthData) {
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("Patient List/"+selected+"/Health Data/"+ selectedHealthData);
+        databaseReference = FirebaseDatabase.getInstance().getReference("Participants/"+selected+"/Health Data/"+ selectedHealthData);
 
-        healthDataList.clear();
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                healthDataList.clear();
                 for (DataSnapshot dataSnapshot: snapshot.getChildren()) {
                     binding.tvCurrent.setText(snapshot.child("Current").getValue(String.class));
                     HealthDataModel healthDataModel = new HealthDataModel();
 
                     healthDataModel.setDate(dataSnapshot.getKey());
 
-                    DatabaseReference dataRef = FirebaseDatabase.getInstance().getReference("Patient List/"+ selected + "/Health Data/" +selectedHealthData);
+                    DatabaseReference dataRef = FirebaseDatabase.getInstance().getReference("Participants/"+ selected + "/Health Data/" +selectedHealthData);
 
                     dataRef.addValueEventListener(new ValueEventListener() {
                         @Override
@@ -102,20 +99,12 @@ public class HealthDataFragment extends Fragment {
                             healthDataReadingAdapter.notifyDataSetChanged();
                         }
 
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-
-                        }
+                        @Override public void onCancelled(@NonNull DatabaseError error) {}
                     });
                     healthDataList.add(healthDataModel);
                 }
-                healthDataReadingAdapter.notifyDataSetChanged();
             }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
+            @Override public void onCancelled(@NonNull DatabaseError error) {}
         });
         healthDataReadingAdapter = new HealthDataReadingAdapter(getContext(),healthDataList);
         recyclerView.setAdapter(healthDataReadingAdapter);

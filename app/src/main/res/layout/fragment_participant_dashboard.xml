@@ -9,7 +9,7 @@
     tools:context=".participants.ParticipantDashboard">
 
     <ImageButton
-        android:id="@+id/image1"
+        android:id="@+id/ibProfile"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
@@ -23,48 +23,47 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tvGreetParti"
         style="@style/Heading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:text="Hello,"
-
+        android:textColor="@color/Black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/image1" />
+        app:layout_constraintTop_toBottomOf="@id/ibProfile" />
 
     <TextView
+        android:id="@+id/tvPartiName"
         style="@style/Heading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginTop="25dp"
-        android:text="John Doe"
         android:textColor="@color/Purple"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/image1" />
+        app:layout_constraintStart_toEndOf="@+id/tvGreetParti"
+        app:layout_constraintTop_toBottomOf="@+id/ibProfile"
+        tools:text="John Doe" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tvDayCount"
         style="@style/Subheading"
-        android:text="Day 7 of trial"
+        tools:text="Day 7 of trial"
         android:textColor="@color/Black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView2" />
+        app:layout_constraintTop_toBottomOf="@id/tvGreetParti" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tvNxtVisit"
         style="@style/Subheading"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="30dp"
-
-        android:text="Next Visit In 4 days"
-
+        tools:text="Next Visit In 4 days"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView2" />
+        app:layout_constraintTop_toBottomOf="@id/tvGreetParti" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView3"
+        android:id="@+id/cvNxtMed"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_marginStart="30dp"
@@ -74,31 +73,31 @@
         app:cardElevation="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView3">
+        app:layout_constraintTop_toBottomOf="@id/tvDayCount">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/tvNtxMedTime"
                 style="@style/Body.main"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="15dp"
-                android:text="Next Medicine at 4 PM"
+                tools:text="Next Medicine at 4 PM"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView12"
+                android:id="@+id/tvNxtMed"
                 style="@style/Body.child"
                 android:layout_marginStart="15dp"
-                android:text="Paracetamol x 1 "
+                tools:text="Paracetamol x 1 "
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView11" />
+                app:layout_constraintTop_toBottomOf="@+id/tvNtxMedTime" />
 
             <TextView
-                android:id="@+id/textView13"
+                android:id="@+id/tvNxtMedsDetails"
                 style="@style/SecondaryButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -106,9 +105,10 @@
                 android:text="See Details"
 
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView12" />
+                app:layout_constraintTop_toBottomOf="@+id/tvNxtMed" />
 
             <ImageView
+                android:id="@+id/ivPill"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginEnd="30dp"
@@ -124,7 +124,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+        android:id="@+id/cvCurrentHR"
         android:layout_width="110dp"
         android:layout_height="145dp"
         android:layout_marginStart="30dp"
@@ -132,17 +132,17 @@
         android:layout_marginEnd="5dp"
         app:cardCornerRadius="9dp"
         app:cardElevation="25dp"
-        app:layout_constraintEnd_toStartOf="@+id/cardView1"
+        app:layout_constraintEnd_toStartOf="@+id/cvCurrentO2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView3">
+        app:layout_constraintTop_toBottomOf="@+id/cvNxtMed">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/ivHR"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="20dp"
@@ -154,16 +154,15 @@
             <TextView
                 android:id="@+id/tvHRValue"
                 style="@style/Body.main"
-
                 android:layout_marginTop="10dp"
-                android:text="96BPM"
-                app:layout_constraintBottom_toTopOf="@+id/textView5"
+                tools:text="96 BPM"
+                app:layout_constraintBottom_toTopOf="@+id/tvHRDetails"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                app:layout_constraintTop_toBottomOf="@+id/ivHR" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/tvHRDetails"
                 style="@style/SecondaryButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -179,34 +178,44 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView1"
+        android:id="@+id/cvCurrentO2"
         android:layout_width="110dp"
         android:layout_height="145dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="5dp"
         app:cardCornerRadius="9dp"
         app:cardElevation="25dp"
-        app:layout_constraintEnd_toStartOf="@+id/cardView2"
+        app:layout_constraintEnd_toStartOf="@+id/cvCurrentBP"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/cardView"
-        app:layout_constraintTop_toBottomOf="@+id/cardView3">
+        app:layout_constraintStart_toEndOf="@+id/cvCurrentHR"
+        app:layout_constraintTop_toBottomOf="@+id/cvNxtMed">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <ImageView
+                android:id="@+id/ivO2"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_oxygen"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/tvOxyVal"
                 style="@style/Body.main"
                 android:layout_marginTop="10dp"
-                android:text="96%"
-                app:layout_constraintBottom_toTopOf="@+id/textView6"
+                tools:text="96%"
+                app:layout_constraintBottom_toTopOf="@+id/tvO2Details"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+                app:layout_constraintTop_toBottomOf="@+id/ivO2" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/tvO2Details"
                 style="@style/SecondaryButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -217,20 +226,11 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvOxyVal" />
 
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="20dp"
-                android:src="@drawable/ic_oxygen"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
+        android:id="@+id/cvCurrentBP"
         android:layout_width="110dp"
         android:layout_height="145dp"
         android:layout_marginTop="60dp"
@@ -239,25 +239,35 @@
         app:cardElevation="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/cardView1"
-        app:layout_constraintTop_toBottomOf="@+id/cardView3">
+        app:layout_constraintStart_toEndOf="@+id/cvCurrentO2"
+        app:layout_constraintTop_toBottomOf="@+id/cvNxtMed">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <ImageView
+                android:id="@+id/ivBP"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_bp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/tvBPVal"
                 style="@style/Body.main"
                 android:layout_marginTop="10dp"
-                android:text="100 mm Hg"
-                app:layout_constraintBottom_toTopOf="@+id/textView7"
+                tools:text="100 mm Hg"
+                app:layout_constraintBottom_toTopOf="@+id/tvBPDetails"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+                app:layout_constraintTop_toBottomOf="@+id/ivBP" />
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/tvBPDetails"
                 style="@style/SecondaryButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -268,22 +278,14 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvBPVal" />
 
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="20dp"
-                android:src="@drawable/ic_bp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <Button
+        android:id="@+id/btnAddSymptoms"
         style="@style/PrimaryActionButton"
         android:layout_width="wrap_content"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="50dp"
         android:text="Add Symptoms"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

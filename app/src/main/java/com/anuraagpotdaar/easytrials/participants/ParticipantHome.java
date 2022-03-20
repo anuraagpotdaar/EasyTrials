@@ -1,17 +1,14 @@
 package com.anuraagpotdaar.easytrials.participants;
 
-import androidx.annotation.NonNull;
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.os.Bundle;
-import android.view.MenuItem;
-
 import com.anuraagpotdaar.easytrials.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
 
 public class ParticipantHome extends AppCompatActivity {
 
@@ -28,7 +25,7 @@ public class ParticipantHome extends AppCompatActivity {
         replaceFragment(new ParticipantDashboard());
         bottomNavigationView.setOnItemSelectedListener(item -> {
 
-            switch (item.getItemId()){
+            switch (item.getItemId()) {
                 case R.id.action_home:
                     replaceFragment(new ParticipantDashboard());
                     break;
@@ -43,10 +40,10 @@ public class ParticipantHome extends AppCompatActivity {
         });
     }
 
-    private void replaceFragment (Fragment fragment){
+    private void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.home_frame,fragment);
+        fragmentTransaction.replace(R.id.home_frame, fragment);
         fragmentTransaction.commit();
     }
 }

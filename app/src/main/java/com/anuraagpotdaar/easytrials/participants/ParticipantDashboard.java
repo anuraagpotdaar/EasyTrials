@@ -34,11 +34,11 @@ public class ParticipantDashboard extends Fragment {
         binding = FragmentParticipantDashboardBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
-        binding.cardView.setOnClickListener(view1 -> replaceFragment());
-        binding.cardView1.setOnClickListener(view1 -> replaceFragment());
-        binding.cardView2.setOnClickListener(view1 -> replaceFragment());
+        binding.cvCurrentHR.setOnClickListener(view1 -> replaceFragment());
+        binding.cvCurrentO2.setOnClickListener(view1 -> replaceFragment());
+        binding.cvCurrentBP.setOnClickListener(view1 -> replaceFragment());
 
-        binding.cardView3.setOnClickListener(view12 -> {
+        binding.cvNxtMed.setOnClickListener(view12 -> {
             Fragment medsFrag = new MedsCalenderFragment();
             FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
             transaction.replace(R.id.home_frame, medsFrag);
@@ -47,16 +47,16 @@ public class ParticipantDashboard extends Fragment {
         });
 
         String selected = getActivity().getIntent().getStringExtra("id");
-        DatabaseReference medsRef = FirebaseDatabase.getInstance().getReference("Patient List/"+ selected + "/Health Data");
+        DatabaseReference healthRef = FirebaseDatabase.getInstance().getReference("Participants/"+ selected);
 
-
-        medsRef.addValueEventListener(new ValueEventListener() {
+        healthRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot dataSnapshot: snapshot.getChildren()) {
-                    binding.tvHRValue.setText(String.format("%s BPM", snapshot.child("Heart rate").child("Current").getValue(String.class)));
-                    binding.tvOxyVal.setText(String.format("%s %%", snapshot.child("Oxygen").child("Current").getValue(String.class)));
-                    binding.tvBPVal.setText(String.format("%smm Hg", snapshot.child("BP").child("Current").getValue(String.class)));
+                for (DataSnapshot ignored : snapshot.getChildren()) {
+                    binding.tvPartiName.setText(snapshot.child("name").getValue(String.class));
+                    binding.tvHRValue.setText(String.format("%s BPM", snapshot.child("Health Data/Heart rate/Current").getValue(String.class)));
+                    binding.tvOxyVal.setText(String.format("%s %%", snapshot.child("Health Data/Oxygen/Current").getValue(String.class)));
+                    binding.tvBPVal.setText(String.format("%smm Hg", snapshot.child("Health Data/BP/Current").getValue(String.class)));
                 }
             }
 
