@@ -2,7 +2,6 @@ package com.anuraagpotdaar.easytrials;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -10,7 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.anuraagpotdaar.easytrials.databinding.ActivityLoginBinding;
-import com.anuraagpotdaar.easytrials.doctors.DoctorDashboard;
 import com.anuraagpotdaar.easytrials.doctors.DoctorHome;
 import com.anuraagpotdaar.easytrials.participants.ParticipantHome;
 import com.google.firebase.database.DataSnapshot;

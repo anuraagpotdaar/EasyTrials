@@ -10,9 +10,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.anuraagpotdaar.easytrials.ParticipantDetailsFragmentDirections;
 import com.anuraagpotdaar.easytrials.R;
+import com.anuraagpotdaar.easytrials.doctors.DoctorDashboardDirections;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -111,14 +114,10 @@ public class ParticipantListAdapter extends RecyclerView.Adapter<ParticipantList
                 notifyItemChanged(getAbsoluteAdapterPosition());
             });
 
-            /*btnMore.setOnClickListener(view -> {
+            btnMore.setOnClickListener(view -> {
                 ParticipantListModel parti = list.get(getBindingAdapterPosition());
-                Intent myIntent = new Intent(context, ParticipantDataManagementActivity.class);
-                myIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                myIntent.putExtra("selected participant", parti.phone);
-                myIntent.putExtra("participant name", parti.name);
-                context.startActivity(myIntent);
-            });*/
+                Navigation.findNavController(view).navigate(DoctorDashboardDirections.actionOpenParticipantDetailsFragment(parti.phone));
+            });
         }
     }
 }

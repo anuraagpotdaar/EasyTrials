@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/SoftBackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MedsFragment">
+
+    <TextView
+        android:id="@+id/btnMedCancel"
+        style="@style/SecNavBtn"
+        android:text="Cancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/headingMed"
+        style="@style/Heading"
+        android:layout_marginStart="30dp"
+        android:text="Medications"
+        android:textColor="@color/Purple"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMedCancel" />
+
+    <TextView
+        android:id="@+id/subHeadingMed"
+        style="@style/Subheading"
+        android:text="For John Doe (21 M)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headingMed" />
+
+    <TextView
+        android:id="@+id/btnAddMeds"
+        style="@style/SecondaryButton"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:text="Add +"
+        android:textColor="@color/Purple"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subHeadingMed" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCurMeds"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAddMeds">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

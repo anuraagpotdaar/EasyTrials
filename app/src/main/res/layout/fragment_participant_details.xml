@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/SoftBackground"
-    tools:context=".ParticipantDetailsFragment"
+    tools:context=".doctors.ParticipantDetailsFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 

@@ -43,7 +43,7 @@ public class HealthDataFragment extends Fragment {
         binding = FragmentHealthDataBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
 
-        String selected = getActivity().getIntent().getStringExtra("id");
+        String selected = HealthDataFragmentArgs.fromBundle(getArguments()).getSelectedParti();
 
         recyclerView = binding.rvReadingList;
         recyclerView.setHasFixedSize(true);

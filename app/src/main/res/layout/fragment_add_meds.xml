@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/SoftBackground"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".doctors.AddMedsFragment">
+
+    <TextView
+        android:id="@+id/btnMedDone"
+        style="@style/Subheading"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="30dp"
+        android:text="Done"
+        android:textColor="@color/Purple"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/headingAddMed"
+        style="@style/Body.main"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:text="Medicine name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMedDone" />
+
+    <EditText
+        android:id="@+id/etMedName"
+        style="@style/MyEditText"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="30dp"
+        android:hint="Paracip 5 mg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headingAddMed" />
+
+    <EditText
+        android:id="@+id/etMorning"
+        style="@style/MyEditText"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="10dp"
+        android:hint="Morning"
+        app:layout_constraintEnd_toStartOf="@+id/etAfternoon"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etMedName" />
+
+    <EditText
+        android:id="@+id/etAfternoon"
+        style="@style/MyEditText"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="30dp"
+        android:hint="Afternoon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/etMorning"
+        app:layout_constraintTop_toBottomOf="@+id/etMedName" />
+
+    <EditText
+        android:id="@+id/etEvening"
+        style="@style/MyEditText"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="30dp"
+        android:hint="Evening"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/etNight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etMorning" />
+
+    <EditText
+        android:id="@+id/etNight"
+        style="@style/MyEditText"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:hint="Night"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/etEvening"
+        app:layout_constraintTop_toBottomOf="@+id/etAfternoon" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

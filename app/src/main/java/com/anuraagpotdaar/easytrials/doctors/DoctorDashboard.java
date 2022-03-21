@@ -53,7 +53,8 @@ public class DoctorDashboard extends Fragment {
         partiCount.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                binding.tvParticipantCount.setText(String.format("%s participants are under your observation", snapshot.child("participant").getValue(int.class)));
+                binding.tvDashboardUsername.setText(String.format("Dr %s", snapshot.child("name").getValue(String.class)));
+                binding.tvParticipantCount.setText(String.format("%s participants are under your observation", snapshot.child("participants").getValue(int.class)));
             }
 
             @Override

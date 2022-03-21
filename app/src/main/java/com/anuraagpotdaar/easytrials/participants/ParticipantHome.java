@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.anuraagpotdaar.easytrials.MedsFragment;
 import com.anuraagpotdaar.easytrials.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -33,7 +34,7 @@ public class ParticipantHome extends AppCompatActivity {
                     replaceFragment(new DeviceFragment());
                     break;
                 case R.id.action_calendar:
-                    replaceFragment(new MedsCalenderFragment());
+                    replaceFragment(new MedsFragment());
                     break;
             }
             return true;

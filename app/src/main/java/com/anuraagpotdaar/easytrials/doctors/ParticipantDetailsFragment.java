@@ -1,4 +1,4 @@
-package com.anuraagpotdaar.easytrials;
+package com.anuraagpotdaar.easytrials.doctors;
 
 import android.Manifest;
 import android.content.Intent;
@@ -17,6 +17,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.anuraagpotdaar.easytrials.R;
 import com.anuraagpotdaar.easytrials.databinding.FragmentParticipantDetailsBinding;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -41,7 +42,7 @@ public class ParticipantDetailsFragment extends Fragment {
         binding = FragmentParticipantDetailsBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
-        String selected = getActivity().getIntent().getStringExtra("selected participant");
+        String selected = ParticipantDetailsFragmentArgs.fromBundle(getArguments()).getSelectedParti();
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Participants/"+selected);
 
@@ -89,17 +90,17 @@ public class ParticipantDetailsFragment extends Fragment {
 
                 binding.tvPartiDetails.setText(personalDetails);
 
-                /*binding.btnMedHistory.setOnClickListener(view1 -> {
-                    Navigation.findNavController(view).navigate(R.id.action_open_medicalHistoryFragment);
+                binding.btnMedHistory.setOnClickListener(view1 -> {
+                    Navigation.findNavController(view).navigate(ParticipantDetailsFragmentDirections.actionOpenMedicalHistoryFragment(selected));
                 });
 
                 binding.btnMeds.setOnClickListener(view1 -> {
-                    Navigation.findNavController(view).navigate(R.id.action_open_medicationFragment);
+                    Navigation.findNavController(view).navigate(ParticipantDetailsFragmentDirections.actionOpenMedsFragment(selected));
                 });
 
                 binding.btnDetailedHelthInfo.setOnClickListener(view1 -> {
-                    Navigation.findNavController(view).navigate(R.id.action_open_participantHelthInfoFragment);
-                });*/
+                    Navigation.findNavController(view).navigate(ParticipantDetailsFragmentDirections.actionOpenHealthDataFragment(selected));
+                });
             }
 
             @Override

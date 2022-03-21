@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.anuraagpotdaar.easytrials.HealthDataFragment;
+import com.anuraagpotdaar.easytrials.MedsFragment;
 import com.anuraagpotdaar.easytrials.R;
 import com.anuraagpotdaar.easytrials.databinding.FragmentParticipantDashboardBinding;
 import com.google.firebase.database.DataSnapshot;
@@ -39,7 +40,7 @@ public class ParticipantDashboard extends Fragment {
         binding.cvCurrentBP.setOnClickListener(view1 -> replaceFragment());
 
         binding.cvNxtMed.setOnClickListener(view12 -> {
-            Fragment medsFrag = new MedsCalenderFragment();
+            Fragment medsFrag = new MedsFragment();
             FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
             transaction.replace(R.id.home_frame, medsFrag);
             transaction.addToBackStack(null);
