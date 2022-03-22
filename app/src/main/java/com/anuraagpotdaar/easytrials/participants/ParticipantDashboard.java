@@ -4,15 +4,12 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.anuraagpotdaar.easytrials.HealthDataFragment;
-import com.anuraagpotdaar.easytrials.MedsFragment;
-import com.anuraagpotdaar.easytrials.R;
 import com.anuraagpotdaar.easytrials.databinding.FragmentParticipantDashboardBinding;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -34,20 +31,20 @@ public class ParticipantDashboard extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentParticipantDashboardBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
+        String selected = getActivity().getIntent().getStringExtra("id");
 
-        binding.cvCurrentHR.setOnClickListener(view1 -> replaceFragment());
-        binding.cvCurrentO2.setOnClickListener(view1 -> replaceFragment());
-        binding.cvCurrentBP.setOnClickListener(view1 -> replaceFragment());
+        binding.cvCurrentHR.setOnClickListener(view1 -> replaceFragment(view,selected));
+        binding.cvCurrentO2.setOnClickListener(view1 -> replaceFragment(view,selected));
+        binding.cvCurrentBP.setOnClickListener(view1 -> replaceFragment(view,selected));
 
         binding.cvNxtMed.setOnClickListener(view12 -> {
-/*            Fragment medsFrag = new MedsFragment();
-            FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-            transaction.replace(R.id.home_frame, medsFrag);
-            transaction.addToBackStack(null);
-            transaction.commit();*/
+            Navigation.findNavController(view).navigate(ParticipantDashboardDirections.actionOpenMedsFragment2(selected));
         });
 
-        String selected = getActivity().getIntent().getStringExtra("id");
+        binding.btnAddSymptoms.setOnClickListener(view12 -> {
+            Navigation.findNavController(view).navigate(ParticipantDashboardDirections.actionOpenAddSymptomsFragment(selected));
+        });
+
         DatabaseReference healthRef = FirebaseDatabase.getInstance().getReference("Participants/"+ selected);
 
         healthRef.addValueEventListener(new ValueEventListener() {
@@ -68,12 +65,8 @@ public class ParticipantDashboard extends Fragment {
         });
         return view;
     }
-    private void replaceFragment (){
-/*        Fragment healthDataFrag = new HealthDataFragment();
-        FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-        transaction.replace(R.id.home_frame, healthDataFrag);
-        transaction.addToBackStack(null);
-        transaction.commit();*/
+    private void replaceFragment(View view, String selected){
+        Navigation.findNavController(view).navigate(ParticipantDashboardDirections.actionOpenHealthDataFragment2(selected));
     }
 
     @Override

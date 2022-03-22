@@ -11,14 +11,24 @@
         android:label="fragment_participant_dashboard"
         tools:layout="@layout/fragment_participant_dashboard" >
         <action
-            android:id="@+id/action_participantDashboard_to_healthDataFragment2"
+            android:id="@+id/action_open_healthDataFragment2"
             app:destination="@id/healthDataFragment2" />
+        <action
+            android:id="@+id/action_open_medsFragment2"
+            app:destination="@id/medsFragment2" />
+        <action
+            android:id="@+id/action_open_addSymptomsFragment"
+            app:destination="@id/addSymptomsFragment" />
     </fragment>
     <fragment
         android:id="@+id/healthDataFragment2"
         android:name="com.anuraagpotdaar.easytrials.HealthDataFragment"
         android:label="fragment_health_data"
-        tools:layout="@layout/fragment_health_data" />
+        tools:layout="@layout/fragment_health_data" >
+        <argument
+            android:name="selectedParti"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/deviceFragment"
         android:name="com.anuraagpotdaar.easytrials.participants.DeviceFragment"
@@ -28,5 +38,18 @@
         android:id="@+id/medsFragment2"
         android:name="com.anuraagpotdaar.easytrials.MedsFragment"
         android:label="fragment_meds"
-        tools:layout="@layout/fragment_meds" />
+        tools:layout="@layout/fragment_meds" >
+        <argument
+            android:name="selectedParti"
+            app:argType="string" />
+    </fragment>
+    <dialog
+        android:id="@+id/addSymptomsFragment"
+        android:name="com.anuraagpotdaar.easytrials.participants.AddSymptomsFragment"
+        android:label="fragment_add_symptoms"
+        tools:layout="@layout/fragment_add_symptoms" >
+        <argument
+            android:name="selectedParti"
+            app:argType="string" />
+    </dialog>
 </navigation>

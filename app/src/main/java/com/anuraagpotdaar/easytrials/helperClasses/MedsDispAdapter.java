@@ -16,13 +16,15 @@ import java.util.ArrayList;
 
 public class MedsDispAdapter extends RecyclerView.Adapter<MedsDispAdapter.MedsViewHolder> {
 
+    private static String user = "";
     Context context;
 
     ArrayList<MedsModel> list;
 
-    public MedsDispAdapter(Context context, ArrayList<MedsModel> list) {
+    public MedsDispAdapter(Context context, ArrayList<MedsModel> list, String user) {
         this.context = context;
         this.list = list;
+        this.user = user;
     }
 
     @NonNull
@@ -71,6 +73,10 @@ public class MedsDispAdapter extends RecyclerView.Adapter<MedsDispAdapter.MedsVi
             night = itemView.findViewById(R.id.tvMedTime4);
 
             delete = itemView.findViewById(R.id.ivDelMed);
+
+            if(user.equals("Participant")){
+                delete.setVisibility(View.GONE);
+            }
 
             delete.setOnClickListener(view -> {
                 // TODO: 08/03/2022  

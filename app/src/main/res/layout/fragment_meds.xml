@@ -26,7 +26,7 @@
     <TextView
         android:id="@+id/subHeadingMed"
         style="@style/Subheading"
-        android:text="For John Doe (21 M)"
+        tools:text="For John Doe (21 M)"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headingMed" />
 

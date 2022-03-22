@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/SoftBackground"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".participants.AddSymptomsFragment">
+
+
+    <TextView
+        android:id="@+id/btnAddSymp"
+        style="@style/PrimeNavBtn"
+        android:text="Done"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/headingSymp"
+        style="@style/Heading"
+        android:text="Add symptoms"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAddSymp" />
+
+    <TextView
+        android:id="@+id/subHeadingSymp"
+        style="@style/Subheading"
+        android:text="Write briefly and exact symptoms"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headingSymp" />
+
+    <EditText
+        android:id="@+id/etSymp"
+        style="@style/MyEditText"
+        android:hint="e.g. Skin rashes"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subHeadingSymp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

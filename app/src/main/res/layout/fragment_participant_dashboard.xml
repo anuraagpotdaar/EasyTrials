@@ -8,30 +8,16 @@
     android:layout_height="match_parent"
     tools:context=".participants.ParticipantDashboard">
 
-    <ImageButton
-        android:id="@+id/ibProfile"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="15dp"
-        android:adjustViewBounds="true"
-        android:background="@color/SmokeWhite"
-        android:padding="15dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/ic_settings"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/tvGreetParti"
         style="@style/Heading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="60dp"
         android:text="Hello,"
         android:textColor="@color/Black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ibProfile" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvPartiName"
@@ -39,16 +25,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="60dp"
         android:textColor="@color/Purple"
         app:layout_constraintStart_toEndOf="@+id/tvGreetParti"
-        app:layout_constraintTop_toBottomOf="@+id/ibProfile"
+        app:layout_constraintTop_toTopOf="parent"
         tools:text="John Doe" />
 
     <TextView
         android:id="@+id/tvDayCount"
         style="@style/Subheading"
-        tools:text="Day 7 of trial"
+        android:text="Day 7 of trial"
         android:textColor="@color/Black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvGreetParti" />
@@ -58,7 +44,7 @@
         style="@style/Subheading"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="30dp"
-        tools:text="Next Visit In 4 days"
+        android:text="Next Visit In 4 days"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvGreetParti" />
 
@@ -84,7 +70,7 @@
                 style="@style/Body.main"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="15dp"
-                tools:text="Next Medicine at 4 PM"
+                android:text="Next Medicine at 4 PM"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -92,7 +78,7 @@
                 android:id="@+id/tvNxtMed"
                 style="@style/Body.child"
                 android:layout_marginStart="15dp"
-                tools:text="Paracetamol x 1 "
+                android:text="Paracetamol x 1 "
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvNtxMedTime" />
 
@@ -103,7 +89,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:text="See Details"
-
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvNxtMed" />
 

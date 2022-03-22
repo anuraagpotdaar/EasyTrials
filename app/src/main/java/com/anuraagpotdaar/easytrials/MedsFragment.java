@@ -11,8 +11,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.anuraagpotdaar.easytrials.databinding.FragmentMedsBinding;
+import com.anuraagpotdaar.easytrials.doctors.ParticipantDetailsFragmentDirections;
 import com.anuraagpotdaar.easytrials.helperClasses.MedsDispAdapter;
 import com.anuraagpotdaar.easytrials.helperClasses.MedsModel;
 import com.google.firebase.database.DataSnapshot;
@@ -22,6 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class MedsFragment extends Fragment {
 
@@ -30,6 +33,7 @@ public class MedsFragment extends Fragment {
     RecyclerView recyclerView;
     MedsDispAdapter medsDispAdapter;
     ArrayList<MedsModel> medsList;
+    String selected,user;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,12 +45,44 @@ public class MedsFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentMedsBinding.inflate(inflater, container, false);
 
-        String selected = MedsFragmentArgs.fromBundle(getArguments()).getSelectedParti();
+        try {
+            selected = MedsFragmentArgs.fromBundle(getArguments()).getSelectedParti();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            selected = getActivity().getIntent().getStringExtra("id");
+            user = "Participant";
+            binding.btnAddMeds.setVisibility(View.GONE);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         binding.btnAddMeds.setOnClickListener(
                 view -> {
                     Navigation.findNavController(view).navigate(MedsFragmentDirections.actionAddMeds(selected));
                 });
+
+        DatabaseReference partiRef = FirebaseDatabase.getInstance().getReference("Participants/"+ selected);
+
+        partiRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                String dob =  snapshot.child("dob").getValue(String.class);
+                int age = Calendar.getInstance().get(Calendar.YEAR) - Integer.parseInt(dob.substring(dob.length() - 4));
+
+                String quickInfo = "for " + age + " years old " + snapshot.child("gender").getValue(String.class);
+                binding.subHeadingMed.setText(quickInfo);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         recyclerView = binding.rvCurMeds;
         DatabaseReference medsRef = FirebaseDatabase.getInstance().getReference("Participants/"+ selected + "/meds");
@@ -94,7 +130,7 @@ public class MedsFragment extends Fragment {
             }
         });
 
-        medsDispAdapter = new MedsDispAdapter(getContext(),medsList);
+        medsDispAdapter = new MedsDispAdapter(getContext(),medsList,user);
         recyclerView.setAdapter(medsDispAdapter);
 
 
