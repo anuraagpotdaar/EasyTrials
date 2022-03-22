@@ -13,7 +13,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.anuraagpotdaar.easytrials.ParticipantDetailsFragmentDirections;
 import com.anuraagpotdaar.easytrials.R;
 import com.anuraagpotdaar.easytrials.doctors.DoctorDashboardDirections;
 import com.google.firebase.database.DataSnapshot;

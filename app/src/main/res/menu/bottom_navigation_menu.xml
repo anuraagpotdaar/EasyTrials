@@ -2,12 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:title="watch"
-        android:id="@+id/action_watch"
+        android:id="@+id/deviceFragment"
         android:icon="@drawable/ic_watch"/>
     <item android:title="home"
-        android:id="@+id/action_home"
+        android:id="@+id/participantDashboard"
         android:icon="@drawable/ic_home"/>
     <item android:title="calendar"
-        android:id="@+id/action_calendar"
+        android:id="@+id/medsFragment2"
         android:icon="@drawable/ic_calendar"/>
 </menu>

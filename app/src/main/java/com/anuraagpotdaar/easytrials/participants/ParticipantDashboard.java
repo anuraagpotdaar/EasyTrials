@@ -40,11 +40,11 @@ public class ParticipantDashboard extends Fragment {
         binding.cvCurrentBP.setOnClickListener(view1 -> replaceFragment());
 
         binding.cvNxtMed.setOnClickListener(view12 -> {
-            Fragment medsFrag = new MedsFragment();
+/*            Fragment medsFrag = new MedsFragment();
             FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
             transaction.replace(R.id.home_frame, medsFrag);
             transaction.addToBackStack(null);
-            transaction.commit();
+            transaction.commit();*/
         });
 
         String selected = getActivity().getIntent().getStringExtra("id");
@@ -69,11 +69,11 @@ public class ParticipantDashboard extends Fragment {
         return view;
     }
     private void replaceFragment (){
-        Fragment healthDataFrag = new HealthDataFragment();
+/*        Fragment healthDataFrag = new HealthDataFragment();
         FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
         transaction.replace(R.id.home_frame, healthDataFrag);
         transaction.addToBackStack(null);
-        transaction.commit();
+        transaction.commit();*/
     }
 
     @Override

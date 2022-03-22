@@ -10,10 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.anuraagpotdaar.easytrials.ParticipantDetailsFragmentArgs;
 import com.anuraagpotdaar.easytrials.R;
 import com.anuraagpotdaar.easytrials.databinding.FragmentMedicalHistoryBinding;
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

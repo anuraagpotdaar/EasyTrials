@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/participant_nav"
+    app:startDestination="@id/participantDashboard">
+
+    <fragment
+        android:id="@+id/participantDashboard"
+        android:name="com.anuraagpotdaar.easytrials.participants.ParticipantDashboard"
+        android:label="fragment_participant_dashboard"
+        tools:layout="@layout/fragment_participant_dashboard" >
+        <action
+            android:id="@+id/action_participantDashboard_to_healthDataFragment2"
+            app:destination="@id/healthDataFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/healthDataFragment2"
+        android:name="com.anuraagpotdaar.easytrials.HealthDataFragment"
+        android:label="fragment_health_data"
+        tools:layout="@layout/fragment_health_data" />
+    <fragment
+        android:id="@+id/deviceFragment"
+        android:name="com.anuraagpotdaar.easytrials.participants.DeviceFragment"
+        android:label="fragment_device"
+        tools:layout="@layout/fragment_device" />
+    <fragment
+        android:id="@+id/medsFragment2"
+        android:name="com.anuraagpotdaar.easytrials.MedsFragment"
+        android:label="fragment_meds"
+        tools:layout="@layout/fragment_meds" />
+</navigation>
